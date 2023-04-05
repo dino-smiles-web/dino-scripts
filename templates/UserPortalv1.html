@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book your appointment</title>
+    <style>
+        body {
+            background-image: url("static/appointment-background.2.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin: 20px;
+        }
+
+        .conclusion {
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            margin: 80px;
+        }
+
+        form {
+            margin-right: 30px;
+        }
+
+
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            margin: 50px;
+        }
+
+        a {
+            color: #040404;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 50%;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="{{ url_for('DinoSmilesMainPage')}}">
+                <img src="static/DinoSmilesLogo.png" alt="Company Logo" width="100">
+            </a>
+            <h1> Book your Appointment</h1>
+
+            <h2> Don't wait, you can book your appointment right now!</h2>
+        </div>
+    </header>
+    <div class="text-container">
+        <form action="/submit" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+            <br>
+            <br>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Enter your last name">
+            <br>
+            <br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+            <br>
+            <br>
+            <label for="Time">Time:</label>
+            <input type="time" id="time" name="time" placeholder="Time">
+            <br>
+            <br>
+            <label for="Email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            <br>
+            <br>
+            <label for="Phone">Phone:</label>
+            <input type="number" id="phone" name="phone" placeholder="Enter your phone">
+            <br>
+            <br>
+	    <label>
+  	    <input type="radio" name="location" value="Drumheller">
+  	    Drumheller
+	    </label>
+	    <label>
+	    <input type="radio" name="location" value="Cochrane">
+  	    Cochrane
+	    </label>
+	    <label>
+  	    <input type="radio" name="location" value="Airdrie">
+  	    Airdrie
+	    </label>
+	    <br>
+            <br>
+            <button type="submit">Submit</button>
+
+        </form>
+        <img src="static/RexSkeleton.jpg" alt="Rex Skeleton Image">
+    </div>
+
+    <div class="conclusion">
+        <p><a href="{{ url_for('DinoSmilesMainPage')}}" style="text-decoration: none; color: black;">Dino Smiles Homepage</a></p>
+    </div>
+
+</body>
+</html>

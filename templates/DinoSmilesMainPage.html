@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>  Welcome to Dino Smiles</title>
+    <style>
+      /* set background image */
+      body {
+        background-image: url("static/MainPageBackground.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+
+      /* add overlay to background image */
+      #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+      }
+
+      /* style image containers */
+      .image-container {
+          max-width: 800px;
+          margin: 50px;
+          padding: 50px;
+          text-align: center;
+          float: left;
+          width: calc(50% - 100px);
+          height: calc(50% - 100px);
+          box-sizing: border-box;
+	  opacity: 0.9
+      }
+
+      /* style overlaid text */
+      h1,
+      h2,
+      p {
+        color: #fff;
+        text-shadow: 2px 2px #000;
+      }
+
+      /* style titles */
+      h1 {
+        font-size: 48px;
+        margin-top: 0;
+      }
+
+      h2 {
+        font-size: 36px;
+        margin-top: 0;
+      }
+
+      /* set size of images */
+      img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ccc;
+        display: block;
+      }
+      a {
+      color: #040404;
+      text-decoration: none;
+      }
+
+    </style>
+  </head>
+  <header>
+    <a href="{{ url_for('DinoSmilesMainPage')}}">
+    <image src="{{url_for('static', filename= 'DinoSmilesLogo.png')}}" alt="Company Logo" width="100">
+    <h1 class="title">Welcome to Dino Smiles</h1>
+    </a>
+    <p>
+      We are Southern Alberta's Apex Teeth Cleaners, offering professional dental
+      care at affordable rates.
+    </p>
+  </header>
+  <body>
+
+    <div id="overlay"></div>
+    <div class="image-container" style="clear: both;">
+      <a href="{{ url_for('DinoSmilesTeam')}}">
+      <img src="{{url_for('static', filename= 'MainPageImage1.jpg')}}" />
+      <h2>Meet our Team</h2>
+      </a>
+    </div>
+    <div class="image-container">
+      <a href="{{ url_for('UserPortalv1')}}">
+      <img src="{{url_for('static', filename= 'MainPageImage2.jpg')}}"/>
+      <h2>Appointment Booking</h2>
+      </a>
+    </div>
+    <div class="image-container" style="clear: both;">
+      <a href="{{ url_for('BranchInfoPage')}}">
+      <img src="{{url_for('static', filename= 'MainPageImage3.jpg')}}"/>
+      <h2>Branch Information</h2>
+      </a>
+    </div>
+    <div class="image-container">
+      <a href="{{ url_for('TestimonialsPage')}}">
+      <img src="{{url_for('static', filename= 'MainPageImage4.jpg')}}"/>
+      <h2>Testimonials</h2>
+      </a>
+    </div>
+  </body>
+</html>
